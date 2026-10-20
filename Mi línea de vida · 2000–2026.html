@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mi línea de vida · 2000–2026</title>
+<style>
+  :root {
+    --bg: #f6f3ee;
+    --surface: #ffffff;
+    --text: #2a2622;
+    --muted: #6f675e;
+    --line: #cfc6b8;
+    --accent: #e8730c;
+    --blue: #2f6fd6;
+    --shadow: 0 6px 18px rgba(40, 30, 20, 0.08);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #17150f;
+      --surface: #221f19;
+      --text: #efe9df;
+      --muted: #a79d8f;
+      --line: #4a4339;
+      --accent: #ff9a3d;
+      --blue: #7fb0ff;
+      --shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #17150f;
+    --surface: #221f19;
+    --text: #efe9df;
+    --muted: #a79d8f;
+    --line: #4a4339;
+    --accent: #ff9a3d;
+    --blue: #7fb0ff;
+    --shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+    line-height: 1.6;
+    padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
+  }
+
+  header { text-align: center; padding: 64px 20px 32px; }
+  header h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0 0 8px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+  header .sub { margin: 0; color: var(--muted); font-style: italic; font-size: 1.05rem; }
+
+  .timeline {
+    position: relative;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 24px 20px 80px;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 28px;
+    width: 2px;
+    background: var(--line);
+  }
+
+  .item { position: relative; padding-left: 64px; margin-bottom: 40px; }
+  .item .dot {
+    position: absolute;
+    left: 19px;
+    top: 14px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 3px solid var(--accent);
+  }
+  .card {
+    background: var(--surface);
+    border-radius: 14px;
+    padding: 22px 24px;
+    box-shadow: var(--shadow);
+  }
+  .year {
+    display: inline-block;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .points {
+    margin: 0;
+    padding-left: 1.2em;
+    font-size: 1rem;
+  }
+  .points li { margin: 0 0 6px; }
+  .points li:last-child { margin-bottom: 0; }
+  .points li::marker { color: var(--accent); }
+
+  .note {
+    margin: 10px 0 0;
+    color: var(--muted);
+    font-style: italic;
+    font-size: 0.95rem;
+  }
+
+  .hl {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .hl-blue {
+    color: var(--blue);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .item.pending .card {
+    border: 2px dashed var(--line);
+    background: transparent;
+    box-shadow: none;
+  }
+  .item.pending .dot { border-style: dashed; border-color: var(--muted); }
+
+  footer { text-align: center; color: var(--muted); font-size: 0.9rem; padding: 0 20px 48px; }
+
+  @media (min-width: 760px) {
+    .timeline::before { left: 50%; transform: translateX(-1px); }
+    .item { width: 50%; padding-left: 0; }
+    .item:nth-child(odd) { padding-right: 44px; }
+    .item:nth-child(even) { margin-left: 50%; padding-left: 44px; }
+    .item:nth-child(odd) .dot { left: auto; right: -11px; }
+    .item:nth-child(even) .dot { left: -11px; }
+    .item.pending { width: 50%; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Mi línea de vida</h1>
+  <p class="sub">2000 – 2026</p>
+</header>
+
+<main class="timeline">
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2000</span>
+      <ul class="points">
+        <li>Nací en 2000.</li>
+        <li>No sé si son recuerdos, pero a veces siento que mis canciones de cuna eran de U2.</li>
+        <li>Aunque entonces no era consciente de nada del todo.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2001</span>
+      <ul class="points">
+        <li>Recuerdo a mi tío jugando videojuegos conmigo sentado en sus piernas.</li>
+        <li>Fue un momento que me marcó tanto que lo siento como algo vivido.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2002 – 2005</span>
+      <ul class="points">
+        <li>Hubo varios momentos de violencia en casa relacionados con el alcohol y las drogas.</li>
+        <li>Veía consumir frente a mí y siempre había sustancias en casa.</li>
+        <li>En algún momento me hicieron consumir.</li>
+        <li>Mi padrastro me obligaba a “ser macho”.</li>
+        <li>Me hacía practicar deportes que no me gustaban.</li>
+        <li>Me ponía en situaciones difíciles de manejar.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2005</span>
+      <ul class="points">
+        <li>En una reunión familiar, una persona abusó de mí.</li>
+        <li>Cuando intenté contarlo, nadie en la familia me creyó.</li>
+        <li>El papá de mi primo me humilló presumiendo todo lo que le daba a él por tener dinero.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2006</span>
+      <ul class="points">
+        <li>Nació mi hermana.</li>
+        <li>De pequeño decían que era muy inexpresivo, y en esa situación no fue la excepción.</li>
+        <li>Sentí incertidumbre sin saber cómo actuar.</li>
+        <li>Mi abuela, por parte de mi padrastro, me contó que él en realidad no es mi papá.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2007</span>
+      <ul class="points">
+        <li>Mi mamá nos descuidaba en alimentación, higiene y estudio.</li>
+        <li>Fui a vivir con mi abuela.</li>
+        <li>Mi hermana decidió quedarse con mi mamá.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2008</span>
+      <ul class="points">
+        <li>Tuve muchas noches de insomnio.</li>
+        <li>Me despertaba llorando sin poder parar y me escondía tras las cortinas.</li>
+        <li>Mi mamá me llevó a un lugar “raro” sin decirme nada: nos recogió un hombre desconocido en una camioneta y fuimos a una clínica. Tuve el presentimiento y, al salir, le pregunté a mi mamá si él era mi papá. Me contestó que sí, mientras regresábamos a casa en bus. Esa fue la primera vez que vi a mi “papá”.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2010</span>
+      <ul class="points">
+        <li>Volví a vivir con mi mamá porque mi abuela era muy severa y dura conmigo.</li>
+        <li>Tuve que hacerme responsable de mí y de mi hermana, de 5 años, porque mi mamá la descuidaba mucho.</li>
+        <li>Empecé a trabajar como pude, vendiendo cosas en el colegio y afuera.</li>
+        <li>A veces no teníamos para comer, o mi mamá se iba y olvidaba dejarnos algo.</li>
+        <li>Mi padrastro huyó a Panamá para no quedar preso por asuntos ilegales. Me llamaba y me decía que ahora yo debía ser “el hombre de la casa”. Me sentía presionado, con una responsabilidad imposible de cumplir, demasiado débil y con miedo.</li>
+        
+        
+        
+      </ul>
+    </div>
+  </article>
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2010 – 2011</span>
+      <ul class="points">
+        <li>Mi hermana tenía un gran apego a mi mamá.</li>
+        <li>Cuando ella se iba y nos dejaba solos, mi hermana sufría mucho.</li>
+        <li>Yo no sabía cómo lidiar con eso.</li>
+        <li>Me llenaba de frustración, y escucharla llorar tan fuerte me dolía.</li>
+        <li>Mi padrastro entra a prisión.</li>
+      </ul>
+      <p class="note">Todavía puedo escucharlo como si estuviera pasando cuando lo recuerdo.</p>
+    </div>
+  </article>
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2012</span>
+      <ul class="points">
+        <li>Mi mamá decidió que nos fuéramos a vivir al Eje Cafetero, siguiendo un proyecto de su hermana gemela.</li>
+        <li>Fue muy difícil: estaba acostumbrado a la ciudad y vivíamos en una finca.</li>
+        <li>Me sentía más solo que nunca.</li>
+        <li>Me costó mucho socializar en el colegio rural y nunca logré conectar con nadie.</li>
+        <li>Llevaba mis audífonos para escuchar U2 y más música.</li>
+        <li>Sentía que con esa música tenía compañía en mi soledad.</li>
+        <li>Hubo mucha escasez y no conseguí trabajo en ese lugar.</li>
+        <li>Comíamos huevo las tres comidas del día.</li>
+        <li>Por eso hoy casi nunca como huevo.</li>
+        <li>Al final del año el proyecto fracasó.</li>
+        <li>Regresamos los tres a Bogotá, a casa de mi abuela, donde nos ayudaron a acomodarnos.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2013</span>
+      <ul class="points">
+        <li>Volví al mismo colegio de antes y ya conocía a algunas personas.</li>
+        <li>Me seguía costando socializar.</li>
+        <li>Mi principal compañía era mi música y los videos que veía en YouTube.</li>
+        <li>Mi abuela seguía siendo muy dura.</li>
+        <li>Empezó la frustración al ver cuánto quería a mi primo.</li>
+        <li>Sentía que yo no destacaba en nada.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2014</span>
+      <ul class="points">
+        <li>Seguía buscando trabajos y oportunidades para ganar dinero.</li>
+        <li><span class="hl">Conocí a Amanda</span>.</li>
+        <li>Empezamos a salir y nos hicimos pareja.</li>
+        <li>Ese mismo año me mudé con ella.</li>
+        <li>Empecé a trabajar en Corabastos de noche y de madrugada.</li>
+        <li>Seguía intentando terminar el colegio.</li>
+        <li>Tuve mi primera experiencia sexual con una mujer.</li>
+        <li>Por primera vez en mi vida sentí que estaba en un hogar.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2016</span>
+      <ul class="points">
+        <li>Conocí a las que fueron mis dos mejores amigas por un buen tiempo.</li>
+        <li>Con ellas sentí que podía ser yo mismo, incluso con mis manerismos, mis gustos raros y mi forma de ser poco “varonil”.</li>
+        <li>Empecé a escuchar K-pop.</li>
+        <li>Veía cómo mi hermana crecía, aunque yo ya estaba algo alejado.</li>
+        <li>Siempre intenté compartir con ella y regalarle cosas.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2017</span>
+      <ul class="points">
+        <li>Con Amanda, a inicios del año, hacemos los planes y acuerdos para irnos a vivir a España.</li>
+        <li>El 11 de enero fallece una persona muy cercana a mí, a quien consideraba mi hermano mayor.</li>
+        <li>En noviembre U2 vino a Colombia. Intenté de todas las formas posibles ir al concierto, pero no fue posible.</li>
+        <li>Es la primera vez que alguien celebra mi cumpleaños.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2018</span>
+      <ul class="points">
+        <li>Amanda muere.</li>
+        <li>Más tarde ese año murió una de las perras que teníamos (Cuca).</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2019</span>
+      <ul class="points">
+        <li>Muere la segunda perra que teníamos (Muca).</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2021</span>
+      <ul class="points">
+        <li>Conozco a mi papá y a su familia.</li>
+        <li>Inicio la universidad.</li>
+        <li>Inicio una relación a distancia con una chica en Villavicencio.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2022</span>
+      <ul class="points">
+        <li>Me acerco más a mi papá y a su familia.</li>
+        <li>Me voy a vivir con mi hermano mayor.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2023</span>
+      <ul class="points">
+        <li>Finaliza la relación con la persona con la que estaba.</li>
+        <li><span class="hl-blue">Conozco a Pau</span>.</li>
+        <li>Desde el minuto uno con Pau se da una conexión y confianza únicas.</li>
+        <li>Empiezo a sentir algo que nunca había sentido.</li>
+        <li>Por necesidad económica debo regresar a vivir en arriendo en un cuarto en casa de mi abuela.</li>
+        <li>Las personas que consideraba mis mejores amigas deciden romper la relación conmigo.</li>
+        <li>Los compañeros que tenía en la universidad también deciden hacer lo mismo.</li>
+        <li>Dejo mi carrera.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2024</span>
+      <ul class="points">
+        <li>Decido iniciar terapia.</li>
+        <li>Continúa mi relación con Pau.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="item">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2025</span>
+      <ul class="points">
+        <li>Cambio mi trabajo.</li>
+        <li>Nos damos un tiempo con Pau y luego formalizamos nuestra relación.</li>
+        <li>Muere mi abuelo paterno.</li>
+        <li>Me reconcilio con la Navidad.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="item pending">
+    <span class="dot"></span>
+    <div class="card">
+      <span class="year">2026</span>
+      <p class="note">…</p>
+    </div>
+  </article>
+
+</main>
+
+<footer>Una historia en construcción.</footer>
+
+</body>
+</html>
